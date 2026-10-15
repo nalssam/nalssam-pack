@@ -86,6 +86,55 @@ claude mcp list
 - **Windows:** WSL2 Ubuntu를 먼저 설치한 뒤 `install-windows.cmd` 실행. 도구는 WSL 안에 설치됩니다. 네이티브 Windows 설치기는 아닙니다.
 - **Linux:** 폴더에서 `bash install.sh` 실행.
 
+## nalssam 환경으로 맞추기
+
+**날쌤팩 설치만으로 개인 서비스 계정까지 연결되지는 않습니다.** 같은 작업 흐름을 만들려면 아래 세 부분을 준비하세요.
+
+| 구분 | 준비 방법 |
+|---|---|
+| 로컬 스킬·CLI·MCP | 위 한 줄 설치. 공통 MCP 6개는 Codex에 자동 등록. |
+| Claude Code 플러그인 | `--claude`로 스킬·네이티브 플러그인 추가. 공통 MCP는 Claude에 별도 등록. |
+| ChatGPT/Codex 서비스 커넥터 | 아래 서비스명을 [앱·플러그인 목록](https://chatgpt.com/plugins)에서 검색하고 본인 계정으로 연결. |
+
+### 서비스 아이콘·명칭·설명
+
+2026-10-16 기준 이 작업에서 설치됨으로 확인한 서비스 플러그인입니다. **설치됨은 계정 로그인·프로젝트 권한·모든 기능의 정상 동작까지 검증됐다는 뜻은 아닙니다.** 우선순위는 작업 목적에 따른 안내이며, 모든 서비스가 필수는 아닙니다.
+
+| 아이콘 | 설치할 서비스 | 설명 | 준비할 계정·권한 |
+|---|---|---|---|
+| <img src="docs/icons/github.png" width="24" height="24" alt="GitHub"> | **[GitHub](https://github.com)**<br>핵심 · 코드/배포 | 저장소 읽기·수정, PR·이슈, Actions·릴리스. 날쌤팩 업로드에도 사용. | GitHub 로그인 → 사용할 저장소 선택. 새 저장소를 만들면 연결 앱의 허용 목록에도 추가. |
+| <img src="docs/icons/google-drive.png" width="24" height="24" alt="Google Drive"> | **[Google Drive](https://drive.google.com)**<br>핵심 · 문서 | Drive 파일 검색과 Docs·Sheets·Slides 문서 작업의 진입점. | Google 로그인 → 사용할 Drive 파일·공유 드라이브 접근 권한 설정. |
+| <img src="docs/icons/notion.png" width="24" height="24" alt="Notion"> | **[Notion](https://notion.so)**<br>핵심 · 지식/업무 | 페이지·데이터베이스 검색, 기록·과제·프로젝트 문서 작성 및 갱신. | Notion 로그인 → 워크스페이스와 연결할 페이지·데이터베이스 선택. |
+| <img src="docs/icons/canva.png" width="24" height="24" alt="Canva"> | **[Canva](https://canva.com)**<br>확장 · 디자인 | 발표 자료·포스터·수업 자료·SNS 디자인 생성과 편집. | Canva 계정 연결. 브랜드 기능·일괄 생성·AI 크레딧은 요금제에 따라 다름. |
+| <img src="docs/icons/higgsfield.png" width="24" height="24" alt="Higgsfield"> | **[Higgsfield](https://higgsfield.ai)**<br>확장 · 영상/이미지 | 이미지·영상, UGC·나레이션·자막·모션 편집, 웹 제작 워크플로. | Higgsfield 계정 연결과 사용 가능한 생성 크레딧 확인. |
+| <img src="docs/icons/supabase.png" width="24" height="24" alt="Supabase"> | **[Supabase](https://supabase.com)**<br>확장 · 데이터/백엔드 | Postgres SQL·테이블·인증·스토리지·Edge Functions·로그 관리. | Supabase 계정 및 본인 조직·프로젝트 접근 권한 설정. |
+| <img src="docs/icons/vercel.png" width="24" height="24" alt="Vercel"> | **[Vercel](https://vercel.com)**<br>확장 · 웹 배포 | 웹앱·AI 에이전트 배포, 프로젝트·배포 상태·로그 작업. | Vercel 계정 연결 → 대상 팀·프로젝트 선택. |
+| <img src="docs/icons/gmail.png" width="24" height="24" alt="Gmail"> | **[Gmail](https://mail.google.com)**<br>확장 · 메일 | 메일 검색·읽기·정리와 요청에 따른 메일 업무. | 본인 Google 메일 계정 연결. 발송은 사용자가 요청한 작업에 한해 수행. |
+| <img src="docs/icons/google-calendar.png" width="24" height="24" alt="Google Calendar"> | **[Google Calendar](https://calendar.google.com)**<br>확장 · 일정 | 일정·가용 시간 조회, 회의 준비와 일정 관리. | 본인 Google 계정 연결 → 사용할 캘린더 권한 설정. |
+| <img src="docs/icons/google-contacts.png" width="24" height="24" alt="Google Contacts"> | **[Google Contacts](https://contacts.google.com)**<br>확장 · 연락처 | 이름·이메일 등 연락처를 찾아 일정·메일 업무의 대상을 확인. | 본인 Google 연락처 계정과 접근 권한 연결. |
+| <img src="docs/icons/windsor.png" width="24" height="24" alt="Windsor.ai"> | **[Windsor.ai](https://windsor.ai)**<br>선택 · 마케팅/지표 | 연결한 광고·분석·비즈니스 데이터 조회와 지원되는 작업 실행. | Windsor.ai 계정 및 실제 분석할 광고·분석 서비스 계정 연결. |
+| <img src="docs/icons/openai-developers.png" width="24" height="24" alt="OpenAI Developers"> | **[OpenAI Developers](https://openai.com)**<br>선택 · AI 개발 | OpenAI API·Agents 개발 가이드와 문제 해결 워크플로. | 플러그인 활성화. 실제 API 앱 실행 시 본인 프로젝트/API 인증이 별도로 필요. |
+| <img src="docs/icons/sites.png" width="24" height="24" alt="Sites"> | **[Sites](https://chatgpt.com)**<br>기본 제공 여부 확인 · 웹 제작 | 대화로 웹사이트·대시보드·도구를 만들고 게시. | 환경에 기본 제공될 수 있음. 계정·워크스페이스의 제공 여부 확인. |
+| <img src="docs/icons/plugin-creator.png" width="24" height="24" alt="Plugin Creator"> | **[Plugin Creator](https://chatgpt.com)**<br>선택 · 플러그인 제작 | 스킬·MCP·앱을 포함하는 재사용 플러그인 제작·수정. | 제공되는 환경에서 활성화. 공유·게시 권한은 계정별로 확인. |
+| <img src="docs/icons/data.png" width="24" height="24" alt="Data"> | **[Data](https://chatgpt.com)**<br>선택 · 데이터 분석 | 데이터 품질 검사, KPI·분석 보고서·대시보드 작성 흐름. | 제공되는 환경에서 플러그인 활성화 후 분석할 파일/데이터 연결. |
+
+Google Docs·Sheets·Slides는 **Google Drive**를 통해 사용합니다. GitHub에서 **새 저장소를 만들면 연결 앱의 허용 저장소 목록에도 추가**하세요. 위 서비스의 ChatGPT/Codex용 플러그인은 Claude로 자동 이전되지 않으므로, Claude에서는 각 서비스가 지원하는 커넥터·공식 MCP를 따로 연결합니다.
+
+### 자동 설치되는 로컬 MCP
+
+| 아이콘 | 이름 | 설명 |
+|---|---|---|
+| 🔍 | REA | 애플리케이션·바이너리·동작 분석 |
+| 📄 | HWPX New | 한글 HWPX·공문·보고서 작성 |
+| 📊 | PPTX Maker | 한국어 발표 자료 생성·점검 |
+| 📝 | Kordoc | 한글·PDF·오피스 문서 파싱·변환 |
+| 🔄 | MarkItDown | 파일·문서 → Markdown 변환 |
+| 🎬 | Motion Director | 모션그래픽 제작·렌더·검수 |
+
+[**전체 구성표와 연결 순서 보기 →**](docs/CONNECTORS.md) — Claude Mem·ECC·Caveman·Harness·Superpowers·디자인/영상 스킬의 설치 방식, Claude 공식 MCP 안내, 호스트 전용·비공개 플러그인의 재현 조건까지 정리했습니다.
+
+개인 계정·메일·문서·쿠키·API 키·유료 라이선스는 배포하거나 복사하지 않습니다. 아이콘은 각 서비스 favicon이며 상표권은 각 소유자에게 있습니다.
+
 ## 무엇이 들어 있나요?
 
 | 분야 | 구성 |
