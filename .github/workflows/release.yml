@@ -1,0 +1,36 @@
+name: Package release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag
+        required: true
+        default: v1.0.0
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - name: Build source ZIP and checksum
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          mkdir -p dist
+          git archive --format=zip --prefix=nalssam-pack/ --output="dist/nalssam-pack-$RELEASE_TAG.zip" HEAD
+          cd dist
+          sha256sum "nalssam-pack-$RELEASE_TAG.zip" > SHA256SUMS.txt
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release create "$RELEASE_TAG" --verify-tag --title "날쌘팩 $RELEASE_TAG" --notes-file RELEASE_NOTES.md
+          fi
+          gh release upload "$RELEASE_TAG" "dist/nalssam-pack-$RELEASE_TAG.zip" dist/SHA256SUMS.txt
