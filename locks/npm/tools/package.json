@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "nalssam-pack-runtime",
+  "version": "1.0.0",
+  "dependencies": {
+    "kordoc": "4.21.33",
+    "@playwright/cli": "0.1.22",
+    "@openai/codex": "0.159.2",
+    "mcporter": "0.14.3",
+    "@anthropic-ai/claude-code": "2.1.300"
+  }
+}

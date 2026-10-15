@@ -1,0 +1,9 @@
+{
+  "name": "showreel-scripts",
+  "private": true,
+  "type": "module",
+  "description": "showreel 스킬 렌더러 의존성. 시스템 Chrome 을 쓰므로 브라우저 내려받기가 필요 없다.",
+  "dependencies": {
+    "playwright-core": "^1.60.0"
+  }
+}

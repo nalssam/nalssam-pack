@@ -1,0 +1,36 @@
+{
+  "mcp": [
+    {
+      "name": "pptx-maker",
+      "ok": true,
+      "tools": 16
+    },
+    {
+      "name": "kordoc",
+      "ok": true,
+      "tools": 17
+    },
+    {
+      "name": "rea",
+      "ok": true,
+      "tools": 207
+    },
+    {
+      "name": "hwpx-new",
+      "ok": true,
+      "tools": 22
+    },
+    {
+      "name": "markitdown",
+      "ok": true,
+      "tools": 1
+    },
+    {
+      "name": "motion",
+      "ok": true,
+      "tools": 22
+    }
+  ],
+  "broken_skill_links": 0,
+  "standalone_skill_links": 763
+}

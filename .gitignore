@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.venv/
+.coverage
+.DS_Store
+*.zip
+*.tar.gz

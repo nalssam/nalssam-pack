@@ -1,0 +1,1293 @@
+{
+  "name": "날쌘팩",
+  "version": "1.0.0",
+  "repository": "nalssam/nalssam-pack",
+  "node_version": "24.19.0",
+  "python_version": "3.12.12",
+  "codex_version": "0.159.2",
+  "sources": [
+    {
+      "repo": "nalssam/aftereffects-mcp",
+      "id": "nalssam--aftereffects-mcp",
+      "commit": "2ed42650a435f7401bce25e69df6880894d68bcb",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "Barty-Bart/motion-graphics",
+      "id": "Barty-Bart--motion-graphics",
+      "commit": "3d83d987d658601d8a1269eb691622bdcd427335",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "id": "microsoft--markitdown",
+      "commit": "4cc9fa17653d695d64fb9eee5b33d4de55ff84e8",
+      "available": true,
+      "skills": [],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "ZZombie04/hwpx_new",
+      "id": "ZZombie04--hwpx_new",
+      "commit": "7c8b7209348916705c9bb02bcc1e1653bb76c336",
+      "available": true,
+      "skills": [
+        "skill"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "lifeofpi-ux/ppt-automation",
+      "id": "lifeofpi-ux--ppt-automation",
+      "commit": null,
+      "available": false,
+      "skills": [],
+      "kind": "tool-or-skill",
+      "note": "GitHub Repository not found; excluded until source is available."
+    },
+    {
+      "repo": "openai/codex-plugin-cc",
+      "id": "openai--codex-plugin-cc",
+      "commit": "db52e28f4d9ded852ab3942cea316258ae4ef346",
+      "available": true,
+      "skills": [
+        "plugins/codex/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "id": "nextlevelbuilder--ui-ux-pro-max-skill",
+      "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+      "available": true,
+      "skills": [
+        ".claude/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "thedotmack/claude-mem",
+      "id": "thedotmack--claude-mem",
+      "commit": "fef3402e674bebbf72a23aeb735e91c92cd34afd",
+      "available": true,
+      "skills": [
+        "plugin/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "Leonxlnx/taste-skill",
+      "id": "Leonxlnx--taste-skill",
+      "commit": "f624f37a8c650b9cc550253104925efe4c8de246",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "bradautomates/claude-video",
+      "id": "bradautomates--claude-video",
+      "commit": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "multica-ai/andrej-karpathy-skills",
+      "id": "multica-ai--andrej-karpathy-skills",
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "microsoft/playwright",
+      "id": "microsoft--playwright",
+      "commit": "439b60d3a4296b75b8d75707ffd4e7c3bb2a4cd9",
+      "available": true,
+      "skills": [
+        "packages/playwright-core/src/tools/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "id": "pbakaus--impeccable",
+      "commit": "ff8e1495979a33086089c9c9f7cfea2ddc386e97",
+      "available": true,
+      "skills": [
+        "plugin/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "obra/superpowers-marketplace",
+      "id": "obra--superpowers-marketplace",
+      "commit": "2cf27fa76667afa0ba724ad8141a6938a3834e32",
+      "available": true,
+      "skills": [],
+      "kind": "reference"
+    },
+    {
+      "repo": "Panniantong/Agent-Reach",
+      "id": "Panniantong--Agent-Reach",
+      "commit": "94f06c1969dfc1834001269d79d3ad0972d9dee6",
+      "available": true,
+      "skills": [
+        "agent_reach/skill"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "hesreallyhim/awesome-claude-code",
+      "id": "hesreallyhim--awesome-claude-code",
+      "commit": "d0dfd7e741a4f5c393f686c089054b59d0f94d58",
+      "available": true,
+      "skills": [],
+      "kind": "reference"
+    },
+    {
+      "repo": "chrisryugj/kordoc",
+      "id": "chrisryugj--kordoc",
+      "commit": "07d87e8e3f227ccb363a78e3d185e96534155aac",
+      "available": true,
+      "skills": [
+        "plugins/kordoc/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "google/skills",
+      "id": "google--skills",
+      "commit": "b85f257d127c190b9c362ac491eb4f0e58f2e5fb",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "revfactory/harness",
+      "id": "revfactory--harness",
+      "commit": "92d9f1b29e7af81acebf51a9fcd1832e739a1414",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "revfactory/harness-100",
+      "id": "revfactory--harness-100",
+      "commit": "8e8d35c6a19166614d1af1df85512266d51121ae",
+      "available": true,
+      "skills": [],
+      "kind": "reference"
+    },
+    {
+      "repo": "affaan-m/ECC",
+      "id": "affaan-m--ECC",
+      "commit": "b92f181b3b748d1abbc2afd94af6aa7d8c8fca29",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "JuliusBrussee/caveman",
+      "id": "JuliusBrussee--caveman",
+      "commit": "d262ab3882952a59312ff3537cd86d894523c5ab",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "wshobson/agents",
+      "id": "wshobson--agents",
+      "commit": "46891e7e60da0e52baf1050b7b6391b64e84c6d9",
+      "available": true,
+      "skills": [
+        "plugins"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "aldegad/sprite-gen",
+      "id": "aldegad--sprite-gen",
+      "commit": "87f25d314679cd57dd3d2a74aad39cf91d66cea2",
+      "available": true,
+      "skills": [
+        "."
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "ZZombie04/motion",
+      "id": "ZZombie04--motion",
+      "commit": "5a2cc59b42cf5ee1b40dee83e90f388ba29318fc",
+      "available": true,
+      "skills": [
+        "."
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "ZZombie04/pptx_maker",
+      "id": "ZZombie04--pptx_maker",
+      "commit": "ae3d919005100472805bf39ddab234bd1cf72577",
+      "available": true,
+      "skills": [
+        "skill/pptx-maker"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "Leonxlnx/cinetic",
+      "id": "Leonxlnx--cinetic",
+      "commit": "bee5d7807205d5543472c38312507f9bf366cbbf",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "nalssam/rea",
+      "id": "nalssam--rea",
+      "commit": "7ad75bdc80d1d45dd9fb4c0b3153997cb392a710",
+      "available": true,
+      "skills": [
+        ".agents/skills/reverse-engineer-anything"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "revfactory/showreel",
+      "id": "revfactory--showreel",
+      "commit": "64521220a2f8e91cb9894400c48c15b7f45205d6",
+      "available": true,
+      "skills": [
+        "."
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "obra/superpowers",
+      "id": "obra--superpowers",
+      "commit": "bb92a77741419a4ab5f06e711a283343f1ada0c3",
+      "available": true,
+      "skills": [
+        "skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "major7apps/pensyve",
+      "id": "major7apps--pensyve",
+      "commit": "d2c56fa44d1ee7b2d504f0008c6b9c860bc7d25f",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "hashgraph-online/hol-guard-plugin",
+      "id": "hashgraph-online--hol-guard-plugin",
+      "commit": "74bea1c01397f4e172721a991e9052556ff0294b",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/alloydb-plugin",
+      "id": "GoogleCloudPlatform--alloydb-plugin",
+      "commit": "be8f5ca61cf8cbb4ac350bcfef7fa63fbd18401c",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/alloydb-omni-plugin",
+      "id": "GoogleCloudPlatform--alloydb-omni-plugin",
+      "commit": "37101e3f9aaf0bd4d0acaeee540a0da2fd773d00",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/bigquery-data-analytics-plugin",
+      "id": "GoogleCloudPlatform--bigquery-data-analytics-plugin",
+      "commit": "8e891942ffda7bc6e17e3782ffdcf217cd99b6ff",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/cloud-bigtable-ecosystem",
+      "id": "GoogleCloudPlatform--cloud-bigtable-ecosystem",
+      "commit": "1f58deba3b4db6f92f7b0bb8817817c61b60f90c",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/cloud-sql-postgresql-plugin",
+      "id": "GoogleCloudPlatform--cloud-sql-postgresql-plugin",
+      "commit": "b57abd7d2efcb2e1e9e6312d4a535f67967b35b9",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/cloud-sql-sqlserver-plugin",
+      "id": "GoogleCloudPlatform--cloud-sql-sqlserver-plugin",
+      "commit": "99215a8af14a03d2e0f510ef04a57dc96d367279",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/data-agent-kit-plugin",
+      "id": "GoogleCloudPlatform--data-agent-kit-plugin",
+      "commit": "83c53b5f129cdeecabe149ff4ba82645d3e51745",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/dataproc-plugin",
+      "id": "GoogleCloudPlatform--dataproc-plugin",
+      "commit": "72899a725ca7634f07a34deb68e4f55b4b43abbe",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/db-context-enrichment",
+      "id": "GoogleCloudPlatform--db-context-enrichment",
+      "commit": "64cf72c924c4737435c331c83868fa589f8d12ac",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/firestore-native-plugin",
+      "id": "GoogleCloudPlatform--firestore-native-plugin",
+      "commit": "dd5a519e9d54c4154154e570381e5a2a340eb3a8",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/google-cloud-storage-plugin",
+      "id": "GoogleCloudPlatform--google-cloud-storage-plugin",
+      "commit": "7dbed139cdebc44b35d8b61ed27fd40bda07f277",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/knowledge-catalog-plugin",
+      "id": "GoogleCloudPlatform--knowledge-catalog-plugin",
+      "commit": "fdc3b206d59d390269de608a3bcf475d2c8829c0",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/looker-plugin",
+      "id": "GoogleCloudPlatform--looker-plugin",
+      "commit": "17ed34d58a4d9b22fdb0693f75169492c4b1c41c",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/oracledb-plugin",
+      "id": "GoogleCloudPlatform--oracledb-plugin",
+      "commit": "f8606fea23c9e7cc5ff80470964c604e04db4cc9",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "GoogleCloudPlatform/spanner-plugin",
+      "id": "GoogleCloudPlatform--spanner-plugin",
+      "commit": "d4db42a2708045d66e70f52610a6d27889e457bc",
+      "available": true,
+      "skills": [],
+      "kind": "claude-plugin-dependency"
+    }
+  ],
+  "claude_plugins": [
+    {
+      "name": "impeccable",
+      "original_id": "impeccable@impeccable",
+      "source": "pbakaus/impeccable",
+      "path": "./plugin",
+      "enabled": true
+    },
+    {
+      "name": "codex",
+      "original_id": "codex@openai-codex",
+      "source": "openai/codex-plugin-cc",
+      "path": "./plugins/codex",
+      "enabled": true
+    },
+    {
+      "name": "andrej-karpathy-skills",
+      "original_id": "andrej-karpathy-skills@karpathy-skills",
+      "source": "multica-ai/andrej-karpathy-skills",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "kordoc",
+      "original_id": "kordoc@kordoc",
+      "source": "chrisryugj/kordoc",
+      "path": "plugins/kordoc",
+      "enabled": true
+    },
+    {
+      "name": "watch",
+      "original_id": "watch@claude-video",
+      "source": "bradautomates/claude-video",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "original_id": "ui-ux-pro-max@ui-ux-pro-max-skill",
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "documentation-standards",
+      "original_id": "documentation-standards@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/documentation-standards",
+      "enabled": true
+    },
+    {
+      "name": "code-documentation",
+      "original_id": "code-documentation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/code-documentation",
+      "enabled": true
+    },
+    {
+      "name": "debugging-toolkit",
+      "original_id": "debugging-toolkit@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/debugging-toolkit",
+      "enabled": true
+    },
+    {
+      "name": "git-pr-workflows",
+      "original_id": "git-pr-workflows@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/git-pr-workflows",
+      "enabled": true
+    },
+    {
+      "name": "operating-kit",
+      "original_id": "operating-kit@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/operating-kit",
+      "enabled": true
+    },
+    {
+      "name": "backend-development",
+      "original_id": "backend-development@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/backend-development",
+      "enabled": true
+    },
+    {
+      "name": "frontend-mobile-development",
+      "original_id": "frontend-mobile-development@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/frontend-mobile-development",
+      "enabled": true
+    },
+    {
+      "name": "full-stack-orchestration",
+      "original_id": "full-stack-orchestration@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/full-stack-orchestration",
+      "enabled": true
+    },
+    {
+      "name": "unit-testing",
+      "original_id": "unit-testing@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/unit-testing",
+      "enabled": true
+    },
+    {
+      "name": "tdd-workflows",
+      "original_id": "tdd-workflows@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/tdd-workflows",
+      "enabled": false
+    },
+    {
+      "name": "code-refactoring",
+      "original_id": "code-refactoring@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/code-refactoring",
+      "enabled": true
+    },
+    {
+      "name": "dependency-management",
+      "original_id": "dependency-management@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/dependency-management",
+      "enabled": true
+    },
+    {
+      "name": "error-debugging",
+      "original_id": "error-debugging@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/error-debugging",
+      "enabled": true
+    },
+    {
+      "name": "team-collaboration",
+      "original_id": "team-collaboration@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/team-collaboration",
+      "enabled": true
+    },
+    {
+      "name": "llm-application-dev",
+      "original_id": "llm-application-dev@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/llm-application-dev",
+      "enabled": true
+    },
+    {
+      "name": "llm-finetuning",
+      "original_id": "llm-finetuning@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/llm-finetuning",
+      "enabled": true
+    },
+    {
+      "name": "agent-orchestration",
+      "original_id": "agent-orchestration@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/agent-orchestration",
+      "enabled": false
+    },
+    {
+      "name": "context-management",
+      "original_id": "context-management@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/context-management",
+      "enabled": true
+    },
+    {
+      "name": "machine-learning-ops",
+      "original_id": "machine-learning-ops@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/machine-learning-ops",
+      "enabled": true
+    },
+    {
+      "name": "data-engineering",
+      "original_id": "data-engineering@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/data-engineering",
+      "enabled": true
+    },
+    {
+      "name": "incident-response",
+      "original_id": "incident-response@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/incident-response",
+      "enabled": true
+    },
+    {
+      "name": "error-diagnostics",
+      "original_id": "error-diagnostics@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/error-diagnostics",
+      "enabled": true
+    },
+    {
+      "name": "distributed-debugging",
+      "original_id": "distributed-debugging@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/distributed-debugging",
+      "enabled": true
+    },
+    {
+      "name": "observability-monitoring",
+      "original_id": "observability-monitoring@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/observability-monitoring",
+      "enabled": true
+    },
+    {
+      "name": "deployment-strategies",
+      "original_id": "deployment-strategies@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/deployment-strategies",
+      "enabled": true
+    },
+    {
+      "name": "deployment-validation",
+      "original_id": "deployment-validation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/deployment-validation",
+      "enabled": true
+    },
+    {
+      "name": "kubernetes-operations",
+      "original_id": "kubernetes-operations@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/kubernetes-operations",
+      "enabled": true
+    },
+    {
+      "name": "cloud-infrastructure",
+      "original_id": "cloud-infrastructure@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/cloud-infrastructure",
+      "enabled": true
+    },
+    {
+      "name": "cicd-automation",
+      "original_id": "cicd-automation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/cicd-automation",
+      "enabled": true
+    },
+    {
+      "name": "application-performance",
+      "original_id": "application-performance@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/application-performance",
+      "enabled": true
+    },
+    {
+      "name": "database-cloud-optimization",
+      "original_id": "database-cloud-optimization@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/database-cloud-optimization",
+      "enabled": true
+    },
+    {
+      "name": "comprehensive-review",
+      "original_id": "comprehensive-review@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/comprehensive-review",
+      "enabled": true
+    },
+    {
+      "name": "performance-testing-review",
+      "original_id": "performance-testing-review@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/performance-testing-review",
+      "enabled": true
+    },
+    {
+      "name": "framework-migration",
+      "original_id": "framework-migration@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/framework-migration",
+      "enabled": true
+    },
+    {
+      "name": "codebase-cleanup",
+      "original_id": "codebase-cleanup@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/codebase-cleanup",
+      "enabled": true
+    },
+    {
+      "name": "database-design",
+      "original_id": "database-design@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/database-design",
+      "enabled": true
+    },
+    {
+      "name": "database-migrations",
+      "original_id": "database-migrations@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/database-migrations",
+      "enabled": true
+    },
+    {
+      "name": "security-scanning",
+      "original_id": "security-scanning@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/security-scanning",
+      "enabled": true
+    },
+    {
+      "name": "security-compliance",
+      "original_id": "security-compliance@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/security-compliance",
+      "enabled": true
+    },
+    {
+      "name": "backend-api-security",
+      "original_id": "backend-api-security@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/backend-api-security",
+      "enabled": true
+    },
+    {
+      "name": "frontend-mobile-security",
+      "original_id": "frontend-mobile-security@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/frontend-mobile-security",
+      "enabled": true
+    },
+    {
+      "name": "data-validation-suite",
+      "original_id": "data-validation-suite@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/data-validation-suite",
+      "enabled": true
+    },
+    {
+      "name": "api-scaffolding",
+      "original_id": "api-scaffolding@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/api-scaffolding",
+      "enabled": true
+    },
+    {
+      "name": "api-testing-observability",
+      "original_id": "api-testing-observability@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/api-testing-observability",
+      "enabled": true
+    },
+    {
+      "name": "seo-content-creation",
+      "original_id": "seo-content-creation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/seo-content-creation",
+      "enabled": true
+    },
+    {
+      "name": "seo-technical-optimization",
+      "original_id": "seo-technical-optimization@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/seo-technical-optimization",
+      "enabled": true
+    },
+    {
+      "name": "seo-analysis-monitoring",
+      "original_id": "seo-analysis-monitoring@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/seo-analysis-monitoring",
+      "enabled": true
+    },
+    {
+      "name": "documentation-generation",
+      "original_id": "documentation-generation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/documentation-generation",
+      "enabled": true
+    },
+    {
+      "name": "c4-architecture",
+      "original_id": "c4-architecture@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/c4-architecture",
+      "enabled": true
+    },
+    {
+      "name": "avoid-ai-writing",
+      "original_id": "avoid-ai-writing@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/avoid-ai-writing",
+      "enabled": true
+    },
+    {
+      "name": "multi-platform-apps",
+      "original_id": "multi-platform-apps@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/multi-platform-apps",
+      "enabled": true
+    },
+    {
+      "name": "business-analytics",
+      "original_id": "business-analytics@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/business-analytics",
+      "enabled": true
+    },
+    {
+      "name": "startup-business-analyst",
+      "original_id": "startup-business-analyst@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/startup-business-analyst",
+      "enabled": true
+    },
+    {
+      "name": "before-you-build",
+      "original_id": "before-you-build@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/before-you-build",
+      "enabled": true
+    },
+    {
+      "name": "hr-legal-compliance",
+      "original_id": "hr-legal-compliance@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/hr-legal-compliance",
+      "enabled": true
+    },
+    {
+      "name": "customer-sales-automation",
+      "original_id": "customer-sales-automation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/customer-sales-automation",
+      "enabled": true
+    },
+    {
+      "name": "content-marketing",
+      "original_id": "content-marketing@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/content-marketing",
+      "enabled": true
+    },
+    {
+      "name": "social-publishing",
+      "original_id": "social-publishing@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/social-publishing",
+      "enabled": true
+    },
+    {
+      "name": "hermes-tweet",
+      "original_id": "hermes-tweet@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/hermes-tweet",
+      "enabled": true
+    },
+    {
+      "name": "blockchain-web3",
+      "original_id": "blockchain-web3@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/blockchain-web3",
+      "enabled": true
+    },
+    {
+      "name": "quantitative-trading",
+      "original_id": "quantitative-trading@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/quantitative-trading",
+      "enabled": true
+    },
+    {
+      "name": "payment-processing",
+      "original_id": "payment-processing@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/payment-processing",
+      "enabled": true
+    },
+    {
+      "name": "game-development",
+      "original_id": "game-development@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/game-development",
+      "enabled": true
+    },
+    {
+      "name": "accessibility-compliance",
+      "original_id": "accessibility-compliance@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/accessibility-compliance",
+      "enabled": true
+    },
+    {
+      "name": "python-development",
+      "original_id": "python-development@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/python-development",
+      "enabled": true
+    },
+    {
+      "name": "javascript-typescript",
+      "original_id": "javascript-typescript@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/javascript-typescript",
+      "enabled": true
+    },
+    {
+      "name": "systems-programming",
+      "original_id": "systems-programming@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/systems-programming",
+      "enabled": true
+    },
+    {
+      "name": "jvm-languages",
+      "original_id": "jvm-languages@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/jvm-languages",
+      "enabled": true
+    },
+    {
+      "name": "web-scripting",
+      "original_id": "web-scripting@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/web-scripting",
+      "enabled": true
+    },
+    {
+      "name": "functional-programming",
+      "original_id": "functional-programming@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/functional-programming",
+      "enabled": true
+    },
+    {
+      "name": "julia-development",
+      "original_id": "julia-development@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/julia-development",
+      "enabled": true
+    },
+    {
+      "name": "arm-cortex-microcontrollers",
+      "original_id": "arm-cortex-microcontrollers@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/arm-cortex-microcontrollers",
+      "enabled": true
+    },
+    {
+      "name": "shell-scripting",
+      "original_id": "shell-scripting@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/shell-scripting",
+      "enabled": true
+    },
+    {
+      "name": "developer-essentials",
+      "original_id": "developer-essentials@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/developer-essentials",
+      "enabled": true
+    },
+    {
+      "name": "dgx-spark-ops",
+      "original_id": "dgx-spark-ops@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/dgx-spark-ops",
+      "enabled": true
+    },
+    {
+      "name": "reverse-engineering",
+      "original_id": "reverse-engineering@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/reverse-engineering",
+      "enabled": true
+    },
+    {
+      "name": "conductor",
+      "original_id": "conductor@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/conductor",
+      "enabled": true
+    },
+    {
+      "name": "superself",
+      "original_id": "superself@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/superself",
+      "enabled": true
+    },
+    {
+      "name": "ui-design",
+      "original_id": "ui-design@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/ui-design",
+      "enabled": true
+    },
+    {
+      "name": "agent-teams",
+      "original_id": "agent-teams@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/agent-teams",
+      "enabled": true
+    },
+    {
+      "name": "dotnet-contribution",
+      "original_id": "dotnet-contribution@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/dotnet-contribution",
+      "enabled": true
+    },
+    {
+      "name": "meigen-ai-design",
+      "original_id": "meigen-ai-design@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/meigen-ai-design",
+      "enabled": true
+    },
+    {
+      "name": "brand-landingpage",
+      "original_id": "brand-landingpage@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/brand-landingpage",
+      "enabled": true
+    },
+    {
+      "name": "plugin-eval",
+      "original_id": "plugin-eval@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/plugin-eval",
+      "enabled": true
+    },
+    {
+      "name": "block-no-verify",
+      "original_id": "block-no-verify@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/block-no-verify",
+      "enabled": true
+    },
+    {
+      "name": "pensyve",
+      "original_id": "pensyve@claude-code-workflows",
+      "source": "major7apps/pensyve",
+      "path": "integrations/claude-code",
+      "enabled": true
+    },
+    {
+      "name": "hol-guard",
+      "original_id": "hol-guard@claude-code-workflows",
+      "source": "hashgraph-online/hol-guard-plugin",
+      "path": "distributions/wshobson-agents",
+      "enabled": true
+    },
+    {
+      "name": "protect-mcp",
+      "original_id": "protect-mcp@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/protect-mcp",
+      "enabled": true
+    },
+    {
+      "name": "signed-audit-trails",
+      "original_id": "signed-audit-trails@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/signed-audit-trails",
+      "enabled": true
+    },
+    {
+      "name": "review-agent-governance",
+      "original_id": "review-agent-governance@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/review-agent-governance",
+      "enabled": true
+    },
+    {
+      "name": "ship-mate",
+      "original_id": "ship-mate@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/ship-mate",
+      "enabled": true
+    },
+    {
+      "name": "file-conversion",
+      "original_id": "file-conversion@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/file-conversion",
+      "enabled": true
+    },
+    {
+      "name": "skill-forge-essentials",
+      "original_id": "skill-forge-essentials@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/skill-forge-essentials",
+      "enabled": true
+    },
+    {
+      "name": "pptx-deck-creation",
+      "original_id": "pptx-deck-creation@claude-code-workflows",
+      "source": "wshobson/agents",
+      "path": "./plugins/pptx-deck-creation",
+      "enabled": true
+    },
+    {
+      "name": "superpowers",
+      "original_id": "superpowers@superpowers-marketplace",
+      "source": "obra/superpowers",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "ecc",
+      "original_id": "ecc@ecc",
+      "source": "affaan-m/ECC",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "caveman",
+      "original_id": "caveman@caveman",
+      "source": "JuliusBrussee/caveman",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "alloydb",
+      "original_id": "alloydb@google-plugins",
+      "source": "GoogleCloudPlatform/alloydb-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "alloydb-omni",
+      "original_id": "alloydb-omni@google-plugins",
+      "source": "GoogleCloudPlatform/alloydb-omni-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "bigquery",
+      "original_id": "bigquery@google-plugins",
+      "source": "GoogleCloudPlatform/bigquery-data-analytics-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "bigtable",
+      "original_id": "bigtable@google-plugins",
+      "source": "GoogleCloudPlatform/cloud-bigtable-ecosystem",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "cloud-sql-postgresql",
+      "original_id": "cloud-sql-postgresql@google-plugins",
+      "source": "GoogleCloudPlatform/cloud-sql-postgresql-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "cloud-sql-sqlserver",
+      "original_id": "cloud-sql-sqlserver@google-plugins",
+      "source": "GoogleCloudPlatform/cloud-sql-sqlserver-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "data-agent-kit",
+      "original_id": "data-agent-kit@google-plugins",
+      "source": "GoogleCloudPlatform/data-agent-kit-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "dataproc",
+      "original_id": "dataproc@google-plugins",
+      "source": "GoogleCloudPlatform/dataproc-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "db-context-engineering",
+      "original_id": "db-context-engineering@google-plugins",
+      "source": "GoogleCloudPlatform/db-context-enrichment",
+      "path": "plugin",
+      "enabled": true
+    },
+    {
+      "name": "firestore-native",
+      "original_id": "firestore-native@google-plugins",
+      "source": "GoogleCloudPlatform/firestore-native-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "google-cloud-developer",
+      "original_id": "google-cloud-developer@google-plugins",
+      "source": "google/skills",
+      "path": "./plugins/cloud/google-cloud-developer",
+      "enabled": true
+    },
+    {
+      "name": "google-cloud-storage",
+      "original_id": "google-cloud-storage@google-plugins",
+      "source": "GoogleCloudPlatform/google-cloud-storage-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "knowledge-catalog",
+      "original_id": "knowledge-catalog@google-plugins",
+      "source": "GoogleCloudPlatform/knowledge-catalog-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "looker",
+      "original_id": "looker@google-plugins",
+      "source": "GoogleCloudPlatform/looker-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "oracledb",
+      "original_id": "oracledb@google-plugins",
+      "source": "GoogleCloudPlatform/oracledb-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "spanner",
+      "original_id": "spanner@google-plugins",
+      "source": "GoogleCloudPlatform/spanner-plugin",
+      "path": ".",
+      "enabled": true
+    },
+    {
+      "name": "harness",
+      "original_id": "harness@harness-marketplace",
+      "source": "revfactory/harness",
+      "path": "./",
+      "enabled": true
+    },
+    {
+      "name": "claude-mem",
+      "original_id": "claude-mem@thedotmack",
+      "source": "thedotmack/claude-mem",
+      "path": "./plugin",
+      "enabled": true
+    },
+    {
+      "name": "taste-skill",
+      "original_id": "taste-skill@taste-skill",
+      "source": "Leonxlnx/taste-skill",
+      "path": "./",
+      "enabled": true
+    }
+  ]
+}
