@@ -35,6 +35,21 @@ if [[ -z "$SCRIPT_DIR" || ! -f "$SCRIPT_DIR/pack.py" ]]; then
   SCRIPT_DIR="$DEST"
 fi
 
+# Keep a ZIP/local installation usable after the downloaded folder is removed.
+MANAGED_INSTALLER="$DATA_ROOT/installer-$PACK_VERSION"
+if [[ "$SCRIPT_DIR" != "$MANAGED_INSTALLER" ]]; then
+  mkdir -p "$DATA_ROOT"
+  if [[ ! -f "$MANAGED_INSTALLER/pack.py" ]]; then
+    [[ ! -e "$MANAGED_INSTALLER" ]] || { echo "기존 폴더 보존: $MANAGED_INSTALLER" >&2; exit 1; }
+    STAGED_INSTALLER=$(mktemp -d "$DATA_ROOT/.installer-XXXXXXXX")
+    for item in pack.py pack.lock.json locks skills; do
+      cp -R "$SCRIPT_DIR/$item" "$STAGED_INSTALLER/$item"
+    done
+    mv "$STAGED_INSTALLER" "$MANAGED_INSTALLER"
+  fi
+  SCRIPT_DIR="$MANAGED_INSTALLER"
+fi
+
 # uv itself lives in the pack, not in the system Python installation.
 if ! command -v uv >/dev/null 2>&1; then
   mkdir -p "$DATA_ROOT/bootstrap/bin"
