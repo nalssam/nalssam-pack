@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# 날쌘팩: macOS / Linux / Windows WSL2. No sudo, no credentials copied.
+# 날쌤팩: macOS / Linux / Windows WSL2. No sudo, no credentials copied.
 set -euo pipefail
-PACK_VERSION="v1.0.0"
+PACK_VERSION="v1.0.1"
 UV_VERSION="0.12.23"
 PYTHON_VERSION="3.12.12"
 REPOSITORY="nalssam/nalssam-pack"

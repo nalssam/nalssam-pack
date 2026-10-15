@@ -1,11 +1,11 @@
 ---
 name: nalssam-pack
-description: 날쌘팩 설치 상태를 확인하고 Codex용 스킬·문서·영상 MCP 환경을 구성하거나 복구할 때 사용한다. 사용자가 날쌘팩 설치·진단·재설치·제거를 요청할 때만 실행한다.
+description: 날쌤팩 설치 상태를 확인하고 Codex용 스킬·문서·영상 MCP 환경을 구성하거나 복구할 때 사용한다. 사용자가 날쌤팩 설치·진단·재설치·제거를 요청할 때만 실행한다.
 ---
 
-# 날쌘팩
+# 날쌤팩
 
-날쌘팩은 로컬 Codex 환경 설치기다. 일반 ChatGPT 웹 채팅의 계정 전체에 로컬 MCP를 연결하는 도구가 아니다.
+날쌤팩은 로컬 Codex 환경 설치기다. 일반 ChatGPT 웹 채팅의 계정 전체에 로컬 MCP를 연결하는 도구가 아니다.
 
 1. 기본 설치 위치 `~/.local/share/nalssam-pack`의 `report.json`, `state.json`을 먼저 확인한다. 다른 설치 경로를 사용했다면 사용자가 선택한 경로를 쓴다.
 2. 설치 상태 확인은 `nalssam-pack doctor --verify-mcp`. MCP 초기화와 도구 목록 조회가 성공했을 때만 연결이 검증됐다고 말한다.

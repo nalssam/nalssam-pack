@@ -1,6 +1,6 @@
 {
-  "name": "날쌘팩",
-  "version": "1.0.0",
+  "name": "날쌤팩",
+  "version": "1.0.1",
   "repository": "nalssam/nalssam-pack",
   "node_version": "24.19.0",
   "python_version": "3.12.12",

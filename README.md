@@ -1,6 +1,6 @@
 <div align="center">
 
-# 날쌘팩 · nalssam-pack
+# 날쌤팩 · nalssam-pack
 
 **한 줄로 준비하는 나만의 Codex 작업실.**
 
@@ -13,14 +13,14 @@
 **macOS · Linux · Windows의 WSL2 Ubuntu** 터미널 또는 명령 실행이 가능한 Codex 작업 환경에서:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.0/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)"
 ```
 
-첫 설치에는 다운로드와 빌드 시간이 필요합니다. 설치가 끝나면 **새 터미널과 Codex 새 세션**을 여세요. Codex에 아직 로그인하지 않았다면 `codex login`을 실행합니다. 기존 Codex CLI는 유지하고, 없으면 날쌘팩 전용 경로에 설치합니다.
+첫 설치에는 다운로드와 빌드 시간이 필요합니다. 설치가 끝나면 **새 터미널과 Codex 새 세션**을 여세요. Codex에 아직 로그인하지 않았다면 `codex login`을 실행합니다. 기존 Codex CLI는 유지하고, 없으면 날쌤팩 전용 경로에 설치합니다.
 
 Codex에 한 문장으로 맡길 수도 있습니다:
 
-> https://github.com/nalssam/nalssam-pack 의 README를 읽고 날쌘팩을 설치한 다음 MCP 연결을 진단해 줘.
+> https://github.com/nalssam/nalssam-pack 의 README를 읽고 날쌤팩을 설치한 다음 MCP 연결을 진단해 줘.
 
 일반 ChatGPT 웹 채팅은 내 컴퓨터의 설치 명령을 실행하지 않습니다. **Codex 앱·CLI·작업 환경처럼 파일과 터미널을 사용할 수 있는 환경**에서 실행하세요. 클라우드 환경에 설치하면 그 환경에만 적용됩니다.
 
@@ -28,7 +28,7 @@ Codex에 한 문장으로 맡길 수도 있습니다:
 
 [최신 릴리스](https://github.com/nalssam/nalssam-pack/releases/latest)의 ZIP을 받아 압축을 풉니다.
 
-- **Mac:** `날쌘팩설치.command` 실행. 최초 실행 시 macOS의 다운로드 파일 확인 절차가 나타날 수 있습니다.
+- **Mac:** `날쌤팩설치.command` 실행. 최초 실행 시 macOS의 다운로드 파일 확인 절차가 나타날 수 있습니다.
 - **Windows:** WSL2 Ubuntu를 먼저 설치한 뒤 `install-windows.cmd` 실행. 도구는 WSL 안에 설치됩니다. 네이티브 Windows 설치기는 아닙니다.
 - **Linux:** 폴더에서 `bash install.sh` 실행.
 
@@ -62,13 +62,13 @@ Codex에 한 문장으로 맡길 수도 있습니다:
 
 ```bash
 # 스킬·원본만 설치: 영상·문서 런타임 다운로드와 MCP 등록 생략
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.0/install.sh)" -- --profile skills
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)" -- --profile skills
 
 # Codex + Claude Code 스킬 및 네이티브 플러그인
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.0/install.sh)" -- --claude
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)" -- --claude
 
 # 설치 전에 목록만 보기 (부트스트랩 Python 준비는 진행)
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.0/install.sh)" -- plan
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)" -- plan
 ```
 
 이미 설치했다면:
@@ -78,7 +78,7 @@ nalssam-pack plan
 nalssam-pack install                        # 다시 실행해 누락·실패 단계 재시도
 nalssam-pack install --only ZZombie04/motion # 특정 저장소만
 nalssam-pack doctor --verify-mcp            # 실제 MCP 연결·도구 목록 검사
-nalssam-pack uninstall                      # 날쌘팩이 만든 연결만 해제
+nalssam-pack uninstall                      # 날쌤팩이 만든 연결만 해제
 ```
 
 기본 설치 경로는 `~/.local/share/nalssam-pack`입니다. `NALSSAM_PACK_ROOT=/원하는/경로 bash install.sh` 또는 `--root`로 바꿀 수 있습니다. PATH에 명령이 없다면 `. ~/.local/share/nalssam-pack/env.sh`를 실행하세요.
@@ -88,7 +88,7 @@ nalssam-pack uninstall                      # 날쌘팩이 만든 연결만 해�
 - 기존 스킬과 이름이 겹치면 원본을 보존하고 별도 이름으로 연결합니다.
 - 기존 MCP와 겹치면 `nalssam-` 접두사로 구분합니다. 설치 이후 사용자가 수정한 MCP는 덮어쓰지 않습니다.
 - Codex 설정과 셸 시작 파일의 기존 내용은 보존하고 백업합니다.
-- 설치 영수증 `state.json`에 날쌘팩이 만든 연결만 기록합니다.
+- 설치 영수증 `state.json`에 날쌤팩이 만든 연결만 기록합니다.
 - 제거 시 현재 값이 영수증과 일치하는 연결만 해제합니다. **소스·캐시·가상환경·백업은 남깁니다.**
 - 동시에 같은 폴더에서 두 설치기가 상태를 덮어쓰지 않도록 잠급니다.
 
@@ -135,7 +135,7 @@ python3 pack.py plan
 
 ## 라이선스
 
-날쌘팩 설치 코드는 MIT입니다. 포함 도구는 원본 저장소에서 다운로드하며 각각의 라이선스를 따릅니다. Remotion·Adobe·외부 API의 별도 사용 조건도 그대로 적용됩니다. 원본 코드·이미지·사용자 계정 정보를 한 ZIP에 재배포하지 않습니다.
+날쌤팩 설치 코드는 MIT입니다. 포함 도구는 원본 저장소에서 다운로드하며 각각의 라이선스를 따릅니다. Remotion·Adobe·외부 API의 별도 사용 조건도 그대로 적용됩니다. 원본 코드·이미지·사용자 계정 정보를 한 ZIP에 재배포하지 않습니다.
 
 ## 공개 배포하기
 
@@ -145,4 +145,4 @@ ZIP 자체는 공개 주소 없이도 `bash install.sh`로 설치할 수 있습�
 bash publish.sh
 ```
 
-이 명령은 `nalssam/nalssam-pack` 공개 저장소, `v1.0.0` 태그와 ZIP 릴리스를 만듭니다. 이미 있는 릴리스를 덮어쓰지 않습니다. 저장소를 만든 뒤에도 현재 GitHub 앱 연결에 새 저장소 접근 권한을 추가해야 업로드할 수 있는 경우가 있습니다.
+이 명령은 `nalssam/nalssam-pack` 공개 저장소, `v1.0.1` 태그와 ZIP 릴리스를 만듭니다. 이미 있는 릴리스를 덮어쓰지 않습니다. 저장소를 만든 뒤에도 현재 GitHub 앱 연결에 새 저장소 접근 권한을 추가해야 업로드할 수 있는 경우가 있습니다.

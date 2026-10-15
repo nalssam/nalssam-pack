@@ -3,7 +3,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 REPO=nalssam/nalssam-pack
-TAG=v1.0.0
+TAG=v1.0.1
 for tool in gh git python3; do
   command -v "$tool" >/dev/null || { echo "필수 도구: $tool" >&2; exit 1; }
 done
@@ -13,10 +13,10 @@ bash -n install.sh
 if [[ ! -d .git ]]; then
   git init -b main
   git add .
-  git -c user.name=nalssam -c user.email=nalssam@users.noreply.github.com commit -m 'feat: release Nalssam Pack v1.0.0'
+  git -c user.name=nalssam -c user.email=nalssam@users.noreply.github.com commit -m 'feat: release Nalssam Pack v1.0.1'
 fi
 if ! gh repo view "$REPO" >/dev/null 2>&1; then
-  gh repo create "$REPO" --public --description '날쌘팩 — 한 줄로 준비하는 Codex 작업 환경'
+  gh repo create "$REPO" --public --description '날쌤팩 — 한 줄로 준비하는 Codex 작업 환경'
 fi
 if ! git remote get-url origin >/dev/null 2>&1; then
   git remote add origin "https://github.com/$REPO.git"
@@ -41,5 +41,5 @@ from pathlib import Path
 p=Path(sys.argv[1]);z=p/('nalssam-pack-'+sys.argv[2]+'.zip')
 (p/'SHA256SUMS.txt').write_text(hashlib.sha256(z.read_bytes()).hexdigest()+'  '+z.name+'\n')
 PY
-gh release create "$TAG" --repo "$REPO" --title "날쌘팩 $TAG" --notes-file RELEASE_NOTES.md "$BUILD_DIR/nalssam-pack-$TAG.zip" "$BUILD_DIR/SHA256SUMS.txt"
+gh release create "$TAG" --repo "$REPO" --title "날쌤팩 $TAG" --notes-file RELEASE_NOTES.md "$BUILD_DIR/nalssam-pack-$TAG.zip" "$BUILD_DIR/SHA256SUMS.txt"
 echo "공개 완료: https://github.com/$REPO"

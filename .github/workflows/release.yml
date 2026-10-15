@@ -5,7 +5,7 @@ on:
       tag:
         description: Existing version tag
         required: true
-        default: v1.0.0
+        default: v1.0.1
 permissions:
   contents: write
 jobs:
@@ -31,6 +31,6 @@ jobs:
           RELEASE_TAG: ${{ inputs.tag }}
         run: |
           if ! gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
-            gh release create "$RELEASE_TAG" --verify-tag --title "날쌘팩 $RELEASE_TAG" --notes-file RELEASE_NOTES.md
+            gh release create "$RELEASE_TAG" --verify-tag --title "날쌤팩 $RELEASE_TAG" --notes-file RELEASE_NOTES.md
           fi
           gh release upload "$RELEASE_TAG" "dist/nalssam-pack-$RELEASE_TAG.zip" dist/SHA256SUMS.txt
