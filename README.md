@@ -2,7 +2,7 @@
 
 # 날쌤팩 · nalssam-pack
 
-**한 줄로 준비하는 나만의 Codex 작업실.**
+**한 줄로 준비하는 나만의 Codex · Claude Code 작업실.**
 
 한국어 문서 · PPT · 모션그래픽 · 영상 · 브라우저 · 개발 스킬과 MCP를 한 번에.
 
@@ -23,6 +23,60 @@ Codex에 한 문장으로 맡길 수도 있습니다:
 > https://github.com/nalssam/nalssam-pack 의 README를 읽고 날쌤팩을 설치한 다음 MCP 연결을 진단해 줘.
 
 일반 ChatGPT 웹 채팅은 내 컴퓨터의 설치 명령을 실행하지 않습니다. **Codex 앱·CLI·작업 환경처럼 파일과 터미널을 사용할 수 있는 환경**에서 실행하세요. 클라우드 환경에 설치하면 그 환경에만 적용됩니다.
+
+## Claude Code에서 설치
+
+**Claude Code**에서도 날쌤팩을 사용할 수 있습니다. macOS·Linux·Windows WSL2 Ubuntu 터미널에서 다음 명령을 실행하세요.
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)" -- --claude
+```
+
+`--claude`는 **기본 Codex 구성에 Claude Code 지원을 추가하는 옵션**입니다. Claude 전용 설치 모드는 아닙니다. Claude Code CLI가 없으면 날쌤팩 전용 경로에 준비하고, Claude용 스킬과 네이티브 플러그인 122개를 설치합니다. 플러그인에 포함된 훅과 서비스별 추가 설정도 적용됩니다.
+
+이미 날쌤팩이 설치돼 있다면 다시 다운로드하지 않고 실행할 수 있습니다.
+
+```bash
+nalssam-pack install --claude
+```
+
+Claude Code 안에서 설치를 맡기려면 다음 문장을 입력하세요.
+
+> https://github.com/nalssam/nalssam-pack 의 README를 읽고 `--claude` 옵션으로 날쌤팩을 설치해 줘. 설치 결과에서 실패한 단계와 추가 계정 설정이 필요한 항목을 구분해서 알려줘.
+
+설치 후에는 **새 터미널에서 Claude Code를 다시 시작**하세요. 처음 사용하는 경우 `claude`를 실행해 본인의 Claude 계정으로 로그인합니다. 기존 Claude 인증 정보를 다른 사람에게 복사할 필요는 없습니다.
+
+```bash
+claude
+# Claude Code 안에서 /plugin 으로 설치된 플러그인 확인
+```
+
+터미널에서 목록을 확인하려면:
+
+```bash
+claude plugin list
+claude mcp list
+```
+
+### Claude Code에 문서·영상 MCP도 연결하기
+
+현재 v1.0.1의 `--claude` 옵션은 Claude용 **스킬·네이티브 플러그인**을 설치합니다. 날쌤팩 공통 MCP 6개의 자동 등록과 `nalssam-pack doctor --verify-mcp` 검사는 **Codex 기준**입니다. Claude Code에서도 이 MCP들을 쓰려면 설치 후 아래 명령으로 별도 등록하세요. 플러그인 자체가 제공하는 MCP와는 구분됩니다.
+
+기본 설치 경로 기준입니다. `--root`로 경로를 바꿨다면 아래 경로도 함께 바꾸세요.
+
+```bash
+claude mcp add --scope user nalssam-rea -- "$HOME/.local/share/nalssam-pack/bin/rea" mcp
+claude mcp add --scope user nalssam-hwpx -- "$HOME/.local/share/nalssam-pack/bin/hwpx-new-mcp"
+claude mcp add --scope user nalssam-pptx -- "$HOME/.local/share/nalssam-pack/bin/pptx-maker-mcp"
+claude mcp add --scope user nalssam-markitdown -- "$HOME/.local/share/nalssam-pack/bin/markitdown-mcp"
+claude mcp add --scope user nalssam-kordoc -- "$HOME/.local/share/nalssam-pack/bin/kordoc-mcp"
+claude mcp add --scope user nalssam-motion -- "$HOME/.local/share/nalssam-pack/bin/motion-mcp"
+claude mcp list
+```
+
+같은 이름의 서버가 이미 있다면 기존 설정을 보존하고 다른 이름으로 등록하세요. 이 방식으로 수동 등록한 Claude MCP는 날쌤팩 제거 영수증에 포함되지 않습니다. 해제할 때는 해당 이름을 지정해 `claude mcp remove --scope user 서버이름`을 실행하세요.
+
+**Claude 웹 채팅이나 일반 Claude Desktop 채팅에 위 문장을 붙여 넣는 것만으로 PC에 설치되지는 않습니다.** 위 안내는 터미널 명령을 실행할 수 있는 Claude Code 기준입니다. Claude Desktop의 로컬 MCP 연결은 해당 앱 설정에서 별도로 구성해야 합니다.
 
 ## 버튼처럼 실행
 
@@ -99,6 +153,7 @@ Claude Code 옵션은 네이티브 플러그인을 설치하므로 해당 플러
 | 항목 | 추가로 필요한 것 |
 |---|---|
 | Codex | 본인의 ChatGPT 계정 로그인 또는 지원되는 API 인증 |
+| Claude Code | 본인의 Claude 계정 또는 지원되는 Anthropic 인증 |
 | Showreel 나레이션·일부 음악 | ElevenLabs 키와 해당 요금제 |
 | claude-video 음성 인식·Gemini | 선택한 백엔드 또는 본인 API 키. 프레임 분석은 로컬 도구로 가능 |
 | Google Cloud·외부 서비스 MCP | 본인 프로젝트·계정·서비스별 설정 |
