@@ -37,14 +37,14 @@ try {
         $Arguments += @('--source', $PSScriptRoot)
     } else {
         $Bootstrap = Join-Path $Temporary 'bootstrap.py'
-        Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.0/instructor/bootstrap.py' -OutFile $Bootstrap
+        Invoke-WebRequest -UseBasicParsing -Uri 'https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.1/instructor/bootstrap.py' -OutFile $Bootstrap
     }
     if ($Root) { $Arguments += @('--root', $Root) }
     if ($Workspace) { $Arguments += @('--workspace', $Workspace) }
     if ($Answers) { $Arguments += @('--answers', $Answers) }
     $Arguments += @('--agent', $Agent)
     & $Python @PythonArgs $Bootstrap @Arguments
-    if ($LASTEXITCODE -ne 0) { throw "교관 워크벤치 설치 실패: 종료 코드 $LASTEXITCODE" }
+    if ($LASTEXITCODE -ne 0) { throw "공군 교관 에디션 설치 실패: 종료 코드 $LASTEXITCODE" }
 } finally {
     Remove-Item -LiteralPath $Temporary -Recurse -Force
 }

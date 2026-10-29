@@ -1,10 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "files": {
-    "harness.py": "8345dd471d6f846b2fea40c19308d4d373cedd45f96d4a35ab501cec5c244da5",
+    "harness.py": "c20060af1a6870db0aff22d25557f50463dafb83e7b532ec115933ad6a0c8213",
     "defaults.json": "59093d8092d2b989456142dfde9fb1bcf3903274e936c9f4bfda397facc826e2",
     "skills/assessment/SKILL.md": "777e1afa998aa0401e895d41fe6b20b2bb4bc4c91dd8fca7713dd8e8c6b41421",
-    "skills/instructor-start/SKILL.md": "42b0146f9002bc329fd58130f3dbc2698f3d69cf0b3ec2e1190ba4cc06c7ea67",
+    "skills/instructor-start/SKILL.md": "008085de556b41f68380f9a98c5a7b7c94a770d9138a50810524256649c5ec44",
     "skills/lesson-design/SKILL.md": "2141a96ee0a1b536ef03f46dbade0769b0d191aaa682e8d46bc6e4cf79b11e2b",
     "skills/materials/SKILL.md": "269431e36aaaeef1f54f556403d6673bb52f2b3bdc64531290d58efb17aa4236",
     "templates/assessment-rubric.md": "1625bb12e6907a960f7d59a6eff190bb51ab7d357c5711ff5f5b7c0fac0bb7fe",

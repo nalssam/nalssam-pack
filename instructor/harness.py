@@ -16,7 +16,7 @@ import tempfile
 import urllib.error
 import urllib.request
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 REPOSITORY = 'nalssam/nalssam-pack'
 MARKER = 'nalssam-instructor-harness'
 _HERE = Path(__file__).resolve().parent
@@ -237,7 +237,7 @@ def ask_profile(profile):
     questions = [('role', '담당 역할'), ('courses', '담당 과목/주제'), ('audience', '학습 대상'),
                  ('session_minutes', '한 차시 시간(분)'), ('tasks', '우선 만들 산출물(쉼표로 구분)'),
                  ('tone', '문체'), ('agent', 'AI 도구(codex/claude/both/manual)')]
-    print('교관 워크벤치 설정 — 이름·계정·보안자료 대신 일반 업무 특성만 입력하세요.')
+    print('공군 교관 에디션 설정 — 이름·계정·보안자료 대신 일반 업무 특성만 입력하세요.')
     for key, label in questions:
         old = ', '.join(profile[key]) if isinstance(profile[key], list) else str(profile[key])
         value = input(f'{label} [{old}]: ').strip()
@@ -263,7 +263,7 @@ def answers(path):
 def generated_files(root, workspace, profile, contents):
     """Only common templates/skills and generated instructions; never read participant documents."""
     command = f'"{sys.executable}" "{root / "bundle/harness.py"}" configure --root "{root}"'
-    guidance = f'''# 날쌤 교관 워크벤치
+    guidance = f'''# 공군 교관 에디션
 
 이 작업실의 설정은 `.harness/profile.json`에 있습니다. 먼저 읽고 아래 기준을 따르세요.
 
@@ -291,7 +291,7 @@ def generated_files(root, workspace, profile, contents):
 1. 이 폴더를 Codex 또는 Claude Code에서 여세요. AI 로그인은 각 앱에서 진행합니다.
 2. 다음 문장을 입력하세요.
 
-> 교관 워크벤치를 시작해줘. `.harness/profile.json`과 `.harness/AGENTS.generated.md`를 읽고, 내 업무에 필요한 조건을 역프롬프트로 물어봐. 답변에 맞춰 설정하고 첫 강의안 하나를 함께 만들어줘.
+> 공군 교관 에디션을 시작해줘. `.harness/profile.json`과 `.harness/AGENTS.generated.md`를 읽고, 내 업무에 필요한 조건을 역프롬프트로 물어봐. 답변에 맞춰 설정하고 첫 강의안 하나를 함께 만들어줘.
 
 3. 직접 설정하려면 아래 명령을 실행하세요.
 
@@ -419,7 +419,7 @@ def install(args):
     print(f'설치 완료: {workspace}\n시작 안내: {workspace / "START-HERE.md"}\n설정: {workspace / ".harness/profile.json"}')
     if skipped:
         print('기존 사용자 안내 파일 보존: ' + ', '.join(str(p) for p in skipped))
-    print('AI 앱에서 이 작업실 폴더를 열고 "교관 워크벤치를 시작해줘"라고 입력하세요.')
+    print('AI 앱에서 이 작업실 폴더를 열고 "공군 교관 에디션을 시작해줘"라고 입력하세요.')
     return 0
 
 
@@ -572,7 +572,7 @@ def uninstall(args):
 
 
 def parser():
-    p = argparse.ArgumentParser(description='날쌤 교관 워크벤치 — 설치·역프롬프트 설정·공통 서식 동기화')
+    p = argparse.ArgumentParser(description='공군 교관 에디션 — 설치·역프롬프트 설정·공통 서식 동기화')
     p.add_argument('--version', action='version', version=VERSION)
     sub = p.add_subparsers(dest='command', required=True)
     for command in ('install', 'configure', 'doctor', 'status', 'sync', 'export', 'import', 'uninstall'):
@@ -604,7 +604,7 @@ def main(argv=None):
     try:
         return commands[args.command](args)
     except (HarnessError, OSError, ValueError, TypeError) as exc:
-        print('교관 워크벤치: ' + str(exc), file=sys.stderr)
+        print('공군 교관 에디션: ' + str(exc), file=sys.stderr)
         return 2
     except (EOFError, KeyboardInterrupt):
         print('\n설정을 취소했습니다. 기존 사용자 자료는 보존했습니다.', file=sys.stderr)

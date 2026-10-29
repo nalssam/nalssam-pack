@@ -56,7 +56,7 @@ def validate_manifest(manifest):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description='날쌤 교관 워크벤치 설치')
+    parser = argparse.ArgumentParser(description='공군 교관 에디션 설치')
     parser.add_argument('--root', type=Path)
     parser.add_argument('--workspace', type=Path)
     parser.add_argument('--agent', choices=['codex', 'claude', 'both', 'manual'], default='codex')

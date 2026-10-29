@@ -1,4 +1,4 @@
-# 날쌤 교관 워크벤치
+# 공군 교관 에디션
 
 **한 번 설치하고, AI가 묻는 질문에 답하면서 나만의 수업 작업실을 만드세요.**
 
@@ -6,20 +6,25 @@
 
 ## 1. 설치
 
-**Windows 권장: [연수용 ZIP 내려받기](https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-channel/nalssam-instructor-v0.1.0.zip)** → 압축 풀기 → **`교관워크벤치설치.cmd` 더블클릭**.
+**[Mac·Windows 공통 연수용 ZIP 내려받기](https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-channel/airforce-instructor-v0.1.1.zip)** → 압축을 풀고 본인 PC에 맞는 파일을 실행하세요.
 
-기존 Python 3.11 이상을 사용합니다. Windows에 Python이 없으면 공식 `winget`으로 사용자 범위의 Python 3.12를 설치합니다. `winget`이 없는 PC는 [python.org](https://www.python.org/downloads/)에서 먼저 설치하세요. Windows 설치기의 실제 Windows 실행은 아직 검증 전입니다.
+| PC | 더블클릭할 파일 | Python이 없다면 |
+|---|---|---|
+| Mac (Apple Silicon·Intel) | **`공군교관설치.command`** | 체크섬을 검증한 전용 uv로 Python 3.12.12를 사용자 폴더에 준비 |
+| Windows | **`공군교관설치.cmd`** | 공식 `winget`으로 사용자 범위의 Python 3.12 설치 |
+
+기존 Python 3.11 이상이 있으면 그대로 사용합니다. Mac의 시스템 Python·셸 설정은 바꾸지 않습니다. Windows에 `winget`이 없으면 [python.org](https://www.python.org/downloads/)에서 Python을 먼저 설치하세요. 다운로드 파일 실행이 차단되면 운영체제의 파일 확인 안내나 관리자 정책을 확인하세요. **두 OS의 실제 기기 실행 검증은 아직 완료되지 않았습니다.**
 
 Windows PowerShell에서 바로 설치하려면:
 
 ```powershell
-$f = Join-Path $env:TEMP 'nalssam-instructor-install.ps1'; Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.0/instructor/install.ps1' -OutFile $f; powershell.exe -NoProfile -ExecutionPolicy Bypass -File $f
+$f = Join-Path $env:TEMP 'nalssam-instructor-install.ps1'; Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.1/instructor/install.ps1' -OutFile $f; powershell.exe -NoProfile -ExecutionPolicy Bypass -File $f
 ```
 
-macOS·Linux·WSL은 **Python 3.11 이상**이 있는 터미널에서:
+Mac·Linux·WSL 터미널에서 바로 설치하려면 (Linux·WSL은 Python 3.11 이상 필요):
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.0/instructor/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-v0.1.1/instructor/install.sh)"
 ```
 
 이 설치기는 **업무 설정·스킬·양식·관리 명령**을 준비합니다. 기본 설치에는 별도 Python 패키지가 필요하지 않습니다. Codex 또는 Claude Code 앱 설치·로그인은 각자 진행하세요. HWPX·PPTX 파일을 실제 생성하는 날쌤팩 도구와 AI 서비스 요금·계정은 별도입니다.
@@ -30,13 +35,13 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/ins
 bash instructor/install.sh --root "$HOME/.local/share/nalssam-instructor" --workspace "$HOME/Documents/NalssamInstructor" --agent both
 ```
 
-Windows ZIP에서는 `install.ps1 -Root 'D:\교관도구' -Workspace 'D:\수업작업실' -Agent both`처럼 지정합니다.
+Windows ZIP에서는 `install.ps1 -Root 'D:\교관도구' -Workspace 'D:\수업작업실' -Agent both`처럼 지정합니다. 두 OS의 기본 작업실 이름과 개인 프로필 형식은 같으므로 `export`·`import`로 설정을 옮길 수 있습니다.
 
 ## 2. 시작: 역프롬프트로 나에게 맞추기
 
 Codex 또는 Claude Code에서 설치 결과에 표시된 **작업실 폴더**를 열고 다음 문장을 붙여 넣으세요:
 
-> 교관 워크벤치를 시작해줘. `.harness/profile.json`과 `.harness/AGENTS.generated.md`를 읽고, 내 업무에 필요한 조건을 하나씩 역프롬프트로 물어봐. 답변을 요약해 확인받고 설정에 반영한 뒤, 공개·가상 주제로 첫 강의안 하나를 함께 만들어줘.
+> 공군 교관 에디션을 시작해줘. `.harness/profile.json`과 `.harness/AGENTS.generated.md`를 읽고, 내 업무에 필요한 조건을 하나씩 역프롬프트로 물어봐. 답변을 요약해 확인받고 설정에 반영한 뒤, 공개·가상 주제로 첫 강의안 하나를 함께 만들어줘.
 
 AI는 역할, 주제, 학습 대상, 차시 시간, 우선 산출물, 문체, 사용하는 AI 도구, 작업실 위치를 확인합니다. 이미 답한 것은 반복해서 묻지 않습니다. 답변은 로컬 설정에 저장되고, 다음 작업부터 그대로 적용됩니다. 일반 채팅만 사용하는 경우에는 생성된 시작 안내와 스킬 내용을 함께 붙여 넣을 수 있으며, 로컬 파일 저장은 직접 해야 합니다.
 
@@ -91,9 +96,9 @@ AI는 역할, 주제, 학습 대상, 차시 시간, 우선 산출물, 문체, �
 ```bash
 python3 instructor/build_bundle.py
 python3 -m unittest discover -s instructor/tests -v
-python3 instructor/build_bundle.py --check --zip /tmp/nalssam-instructor-v0.1.0.zip
+python3 instructor/build_bundle.py --check --zip /tmp/airforce-instructor-v0.1.1.zip
 ```
 
-배포 코드: `instructor-v0.1.0` 태그. 업데이트 채널·연수용 ZIP: `instructor-channel` 브랜치. 채널 변경은 새 코드 커밋과 테스트를 확인한 뒤 진행합니다. 전체 팩의 기존 `v1.0.1` 릴리스는 교체하지 않습니다.
+배포 코드: `instructor-v0.1.1` 태그. 업데이트 채널·연수용 ZIP: `instructor-channel` 브랜치. 채널 변경은 새 코드 커밋과 테스트를 확인한 뒤 진행합니다. 전체 팩의 기존 `v1.0.1` 릴리스는 교체하지 않습니다.
 
 Linux 설치·설정·동기화·보존·제거와 MCP 등 기존 팩의 회귀 검사를 실행합니다. **Windows/macOS 실제 실행과 AI 계정 로그인·문서 출력은 별도 검증 대상**입니다. 자동으로 군용 운영망에 연결하거나 기관의 승인 절차를 대신하지 않습니다.
