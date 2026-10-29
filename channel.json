@@ -1,6 +1,11 @@
 {
-  "version": "0.1.0",
-  "ref": "463ee1415b32d115b0e46e301234bc8f4f8211b3",
-  "name": "날쌤 교관 워크벤치",
+  "version": "0.1.1",
+  "ref": "0ff13db498cbded12ebd794391df824c6955fcd0",
+  "name": "공군 교관 에디션",
+  "platforms": [
+    "macOS Apple Silicon",
+    "macOS Intel",
+    "Windows"
+  ],
   "published_date": "2026-10-29"
 }

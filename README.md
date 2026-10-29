@@ -1,11 +1,19 @@
-# 날쌤 교관 워크벤치 · 연수 배포 채널
+# 공군 교관 에디션 · Mac·Windows 연수 배포
 
-[Windows 연수용 ZIP 다운로드](https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-channel/nalssam-instructor-v0.1.0.zip)
+**[공통 연수용 ZIP 다운로드](https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-channel/airforce-instructor-v0.1.1.zip)**
 
-압축을 풀고 `교관워크벤치설치.cmd`를 실행하세요. 작업실을 AI 앱에서 열고 “교관 워크벤치를 시작해줘”라고 말하면 설정 질문을 시작합니다.
+압축을 푼 뒤 **Mac은 `공군교관설치.command`**, **Windows는 `공군교관설치.cmd`**를 실행하세요.
 
-[설치·사용 안내](https://github.com/nalssam/nalssam-pack/blob/instructor-v0.1.0/instructor/README.md) · [소스 코드](https://github.com/nalssam/nalssam-pack/tree/instructor-v0.1.0/instructor)
+작업실을 Codex 또는 Claude Code에서 열고 **“공군 교관 에디션을 시작해줘”**라고 말하면 역프롬프트 설정을 시작합니다.
 
-기관 공식 배포물이 아닌 독립 제작 교육 도구입니다. 기본 설치는 Python 3.11 이상을 사용합니다. Windows는 Python이 없을 때 winget 설치를 시도합니다. AI 앱과 로그인은 별도입니다. Linux의 테스트 27개가 통과했으며 Windows/macOS 실제 실행은 아직 검증 전입니다.
+[설치·사용 안내](https://github.com/nalssam/nalssam-pack/blob/instructor-v0.1.1/instructor/README.md) · [소스 코드](https://github.com/nalssam/nalssam-pack/tree/instructor-v0.1.1/instructor)
 
-`channel.json`은 교관 작업실이 내려받을 고정된 코드 커밋을 지정합니다. 개인 설정·작성 자료는 이 저장소로 올라오지 않습니다.
+Python이 없는 Mac은 전용 uv·Python을 사용자 폴더에 준비하고, Windows는 winget으로 Python 설치를 시도합니다. AI 앱·로그인은 별도입니다. 시스템·전역 AI 설정은 덮어쓰지 않습니다.
+
+테스트 30개와 Linux 실제 설치·동기화를 검증했습니다. Mac Python 준비는 모의 검사를 수행했으며 **Mac·Windows 실제 기기 실행은 미검증**입니다.
+
+기존 v0.1.0 설치자는 설치 폴더의 `bin/instructor`(Windows: `instructor.cmd`)에서 `sync`를 실행하면 개인 프로필을 유지하며 최신 공통 스킬·지침을 받습니다. 새 Mac 더블클릭 설치기는 이 ZIP에 포함되어 있습니다.
+
+날쌤의 독립 제작 교육 도구로, 기관의 공식 시스템이나 승인 제품을 뜻하지 않습니다. 개인 설정·작성 자료는 GitHub에 업로드하지 않습니다.
+
+[이전 v0.1.0 ZIP](https://raw.githubusercontent.com/nalssam/nalssam-pack/instructor-channel/nalssam-instructor-v0.1.0.zip)도 보존했습니다.
