@@ -443,8 +443,14 @@ def configure(args):
     profile['workspace'] = str(workspace)
     profile = validate_profile(profile)
     manifest, contents = read_bundle(root / 'bundle')
-    files = {path: body for path, body in generated_files(root, workspace, profile, contents).items()
+    generated = generated_files(root, workspace, profile, contents)
+    files = {path: body for path, body in generated.items()
              if path.relative_to(workspace).parts[0] not in ('templates', '.agents', '.claude')}
+    # Changing AI apps registers missing local skills, without refreshing edited assets.
+    for path, body in generated.items():
+        if path.relative_to(workspace).parts[0] in ('.agents', '.claude'):
+            if not path.exists() and not path.is_symlink():
+                files[path] = body
     state['managed'][str(profile_path)] = digest(profile_path.read_bytes())
     skipped = apply(files, state, root, workspace)
     save_state(root, state)

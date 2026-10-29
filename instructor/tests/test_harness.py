@@ -97,6 +97,8 @@ class HarnessIntegrationTest(unittest.TestCase):
         self.assertEqual(profile["tasks"], ["실습 설계"])
         self.assertEqual((self.workspace / "AGENTS.md").read_text(encoding="utf-8"), "사용자의 기존 규칙\n")
         self.assertTrue((self.workspace / ".harness/AGENTS.generated.md").is_file())
+        self.run_cli("configure", "--answers", self.answers({"agent": "claude"}))
+        self.assertTrue((self.workspace / ".claude/skills/instructor-start/SKILL.md").is_file())
 
     def test_reinstall_does_not_reset_profile_or_overwrite_user_edits(self):
         self.install()
