@@ -432,6 +432,24 @@
       "available": true,
       "skills": [],
       "kind": "claude-plugin-dependency"
+    },
+    {
+      "repo": "Jay-Hyun/ClaraMuz",
+      "id": "Jay-Hyun--ClaraMuz",
+      "commit": "2dbeac1edc00fc247dfa6e66e708a70e25b2d84d",
+      "available": true,
+      "skills": [
+        "plugins/clara-muz/skills"
+      ],
+      "kind": "tool-or-skill"
+    },
+    {
+      "repo": "reason-machines/reason-network",
+      "id": "reason-machines--reason-network",
+      "commit": "cdcfab5efa4d021e33cc72120ba20ace69803034",
+      "available": true,
+      "skills": [],
+      "kind": "tool-or-skill"
     }
   ],
   "claude_plugins": [
@@ -1288,6 +1306,22 @@
       "source": "Leonxlnx/taste-skill",
       "path": "./",
       "enabled": true
+    },
+    {
+      "name": "clara-muz",
+      "original_id": "clara-muz@clara-muz",
+      "source": "Jay-Hyun/ClaraMuz",
+      "path": "plugins/clara-muz",
+      "enabled": true
     }
-  ]
+  ],
+  "reason_network": {
+    "version": "0.12.11",
+    "sha256": {
+      "x86_64-unknown-linux-musl": "0ab91ac33af6704f4836bbedc5b55bed4b0a9fdfdc8da1a1d16db8a07d2fc1c4",
+      "aarch64-unknown-linux-musl": "3bc31d0db0263ac27020ac4598415e3e16cfb672d6a9a9ca093775d300ef4fc2",
+      "x86_64-apple-darwin": "17ea926bce47913882c7b3ba0ae42d03694a7720518ee726e4ae3028bb293f62",
+      "aarch64-apple-darwin": "4626279ee457d15566bcee47ba11ce270d545bd1137c48208e0df3878606197b"
+    }
+  }
 }

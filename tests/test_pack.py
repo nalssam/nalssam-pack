@@ -3,6 +3,8 @@ import argparse
 import contextlib
 import importlib.util
 import io
+import hashlib
+import tarfile
 import json
 import os
 from pathlib import Path
@@ -117,6 +119,58 @@ class InstallerTest(unittest.TestCase):
                 self.app.mcp('demo', ['/new', 'mcp'])
             execute.assert_not_called()
 
+    def test_claramuz_links_both_skills_without_overwriting_user_files(self):
+        source = next(s for s in pack.LOCK['sources'] if s['repo'] == 'Jay-Hyun/ClaraMuz')
+        root = self.home / 'clara'
+        for name in ['clara-muz-team', 'ai-memory']:
+            folder = root / 'plugins/clara-muz/skills' / name
+            folder.mkdir(parents=True)
+            (folder / 'SKILL.md').write_text(f'---\nname: {name}\n---\n')
+        self.app.state['sources'][source['repo']] = {'path': str(root)}
+        self.assertEqual(self.app.link_skills(source)['registered'], 2)
+        self.assertEqual(self.app.link_skills(source)['registered'], 2)
+        self.assertEqual(len(self.app.state['skills']), 2)
+
+    def test_reason_network_rejects_corrupt_archive_before_execution(self):
+        def fake(args, **kwargs):
+            self.assertEqual(args[0], 'curl')
+            Path(args[-1]).write_bytes(b'corrupted download')
+            return ''
+        with patch.object(pack, 'run', side_effect=fake):
+            with self.assertRaisesRegex(RuntimeError, '체크섬 불일치'):
+                self.app.reason_network()
+        self.assertFalse((self.app.bin / 'reason-network').exists())
+
+    def test_reason_network_wrapper_uses_private_state_and_uninstall_keeps_data(self):
+        binary = self.home / 'reason-network'
+        binary.write_text('#!/bin/sh\necho "reason-network 0.12.11"\n')
+        binary.chmod(0o755)
+        archive = self.home / 'release.tar.gz'
+        with tarfile.open(archive, 'w:gz') as tar:
+            tar.add(binary, arcname='reason-network')
+        digest = hashlib.sha256(archive.read_bytes()).hexdigest()
+        locked = {**pack.LOCK, 'reason_network': {'version': '0.12.11', 'sha256': {'x86_64-unknown-linux-musl': digest}}}
+        execute = pack.run
+        def fake(args, **kwargs):
+            if args[0] == 'curl':
+                Path(args[-1]).write_bytes(archive.read_bytes())
+                return ''
+            return execute(args, **kwargs)
+        with patch.object(pack, 'LOCK', locked), patch.object(pack.platform, 'system', return_value='Linux'), patch.object(pack.platform, 'machine', return_value='x86_64'), patch.object(pack, 'run', side_effect=fake):
+            self.app.reason_network()
+            self.app.reason_network()
+        wrapper = self.app.bin / 'reason-network'
+        self.assertIn('REASON_NETWORK_HOME', wrapper.read_text())
+        self.assertEqual(subprocess.check_output([wrapper, '--version'], text=True).strip(), 'reason-network 0.12.11')
+        data = self.app.root / 'data/reason-network/network.db'
+        data.parent.mkdir(parents=True)
+        data.write_text('user state')
+        self.app.codex = None
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.app.uninstall()
+        self.assertFalse(wrapper.exists())
+        self.assertEqual(data.read_text(), 'user state')
+
     def test_manifest_has_commits_and_no_local_machine_paths(self):
         data = (BASE / 'pack.lock.json').read_text()
         self.assertNotIn('/workspace/', data)
@@ -124,7 +178,7 @@ class InstallerTest(unittest.TestCase):
         for source in pack.LOCK['sources']:
             if source['available']:
                 self.assertRegex(source['commit'], r'^[0-9a-f]{40}$')
-        self.assertEqual(len(pack.LOCK['claude_plugins']), 122)
+        self.assertEqual(len(pack.LOCK['claude_plugins']), 123)
 
 if __name__ == '__main__':
     unittest.main()

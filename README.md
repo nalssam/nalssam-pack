@@ -8,6 +8,10 @@
 
 </div>
 
+## 교관 연수용 에디션
+
+**[날쌤 교관 워크벤치 →](instructor/README.md)** — Windows 더블클릭 설치, 역프롬프트 맞춤 설정, 교수설계·평가·실습자료 스킬과 양식, 공통 설정 내려받기 동기화를 제공합니다. 기존 전체 팩과 구분되는 Python 표준 라이브러리 기반 작업실입니다.
+
 ## 바로 설치
 
 **macOS · Linux · Windows의 WSL2 Ubuntu** 터미널 또는 명령 실행이 가능한 Codex 작업 환경에서:
@@ -32,7 +36,7 @@ Codex에 한 문장으로 맡길 수도 있습니다:
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/nalssam/nalssam-pack/v1.0.1/install.sh)" -- --claude
 ```
 
-`--claude`는 **기본 Codex 구성에 Claude Code 지원을 추가하는 옵션**입니다. Claude 전용 설치 모드는 아닙니다. Claude Code CLI가 없으면 날쌤팩 전용 경로에 준비하고, Claude용 스킬과 네이티브 플러그인 122개를 설치합니다. 플러그인에 포함된 훅과 서비스별 추가 설정도 적용됩니다.
+`--claude`는 **기본 Codex 구성에 Claude Code 지원을 추가하는 옵션**입니다. Claude 전용 설치 모드는 아닙니다. Claude Code CLI가 없으면 날쌤팩 전용 경로에 준비하고, Claude용 스킬과 네이티브 플러그인 123개를 설치합니다. 플러그인에 포함된 훅과 서비스별 추가 설정도 적용됩니다.
 
 이미 날쌤팩이 설치돼 있다면 다시 다운로드하지 않고 실행할 수 있습니다.
 
@@ -60,7 +64,7 @@ claude mcp list
 
 ### Claude Code에 문서·영상 MCP도 연결하기
 
-현재 v1.0.1의 `--claude` 옵션은 Claude용 **스킬·네이티브 플러그인**을 설치합니다. 날쌤팩 공통 MCP 6개의 자동 등록과 `nalssam-pack doctor --verify-mcp` 검사는 **Codex 기준**입니다. Claude Code에서도 이 MCP들을 쓰려면 설치 후 아래 명령으로 별도 등록하세요. 플러그인 자체가 제공하는 MCP와는 구분됩니다.
+현재 v1.0.1의 `--claude` 옵션은 Claude용 **스킬·네이티브 플러그인**을 설치합니다. 날쌤팩 공통 MCP 7개의 자동 등록과 `nalssam-pack doctor --verify-mcp` 검사는 **Codex 기준**입니다. Claude Code에서도 이 MCP들을 쓰려면 설치 후 아래 명령으로 별도 등록하세요. 플러그인 자체가 제공하는 MCP와는 구분됩니다.
 
 기본 설치 경로 기준입니다. `--root`로 경로를 바꿨다면 아래 경로도 함께 바꾸세요.
 
@@ -71,6 +75,7 @@ claude mcp add --scope user nalssam-pptx -- "$HOME/.local/share/nalssam-pack/bin
 claude mcp add --scope user nalssam-markitdown -- "$HOME/.local/share/nalssam-pack/bin/markitdown-mcp"
 claude mcp add --scope user nalssam-kordoc -- "$HOME/.local/share/nalssam-pack/bin/kordoc-mcp"
 claude mcp add --scope user nalssam-motion -- "$HOME/.local/share/nalssam-pack/bin/motion-mcp"
+claude mcp add --scope user nalssam-reason-network -- "$HOME/.local/share/nalssam-pack/bin/reason-network" mcp
 claude mcp list
 ```
 
@@ -92,7 +97,7 @@ claude mcp list
 
 | 구분 | 준비 방법 |
 |---|---|
-| 로컬 스킬·CLI·MCP | 위 한 줄 설치. 공통 MCP 6개는 Codex에 자동 등록. |
+| 로컬 스킬·CLI·MCP | 위 한 줄 설치. 공통 MCP 7개는 Codex에 자동 등록. |
 | Claude Code 플러그인 | `--claude`로 스킬·네이티브 플러그인 추가. 공통 MCP는 Claude에 별도 등록. |
 | ChatGPT/Codex 서비스 커넥터 | 아래 서비스명을 [앱·플러그인 목록](https://chatgpt.com/plugins)에서 검색하고 본인 계정으로 연결. |
 
@@ -130,6 +135,7 @@ Google Docs·Sheets·Slides는 **Google Drive**를 통해 사용합니다. GitHu
 | 📝 | Kordoc | 한글·PDF·오피스 문서 파싱·변환 |
 | 🔄 | MarkItDown | 파일·문서 → Markdown 변환 |
 | 🎬 | Motion Director | 모션그래픽 제작·렌더·검수 |
+| 🌐 | Reason Network | 팀 에이전트 목록·메시지·승인 요청(팀 연결 별도) |
 
 [**전체 구성표와 연결 순서 보기 →**](docs/CONNECTORS.md) — Claude Mem·ECC·Caveman·Harness·Superpowers·디자인/영상 스킬의 설치 방식, Claude 공식 MCP 안내, 호스트 전용·비공개 플러그인의 재현 조건까지 정리했습니다.
 
@@ -143,13 +149,20 @@ Google Docs·Sheets·Slides는 **Google Drive**를 통해 사용합니다. GitHu
 | 영상·모션 | Motion Director, Showreel, Cinetic, motion-graphics, claude-video, Sprite Gen |
 | UI·디자인 | UI UX Pro Max, Taste, Impeccable |
 | 개발·조사 | REA, Playwright, Agent Reach, Google Skills, Karpathy Skills |
-| 작업 방식·기억 | ECC, Caveman, Harness, Wshobson Agents, Superpowers, Claude Mem |
+| 작업 방식·기억 | ECC, Caveman, Harness, Wshobson Agents, Superpowers, Claude Mem, ClaraMuz |
+| 에이전트 간 통신 | Reason Network (팀 디렉터리·메시지 MCP) |
 | 참고 모음 | Harness 100, Awesome Claude Code, Superpowers Marketplace |
 | 원본 보관·호스트별 기능 | After Effects MCP, Codex Plugin for Claude Code |
 
-사용자가 추천한 **29개 원본 저장소**와 추가 의존 저장소를 `pack.lock.json`에 기록했습니다. 접근 불가인 `lifeofpi-ux/ppt-automation`은 실패를 숨기지 않고 미설치로 표시합니다. 참고 모음은 소스로 보관하며, 목록에 나오는 모든 외부 링크를 무제한으로 설치하지 않습니다.
+사용자가 추천한 **31개 원본 저장소**와 추가 의존 저장소를 `pack.lock.json`에 기록했습니다. 접근 불가인 `lifeofpi-ux/ppt-automation`은 실패를 숨기지 않고 미설치로 표시합니다. 참고 모음은 소스로 보관하며, 목록에 나오는 모든 외부 링크를 무제한으로 설치하지 않습니다.
 
-기본값은 **Codex 전체 구성**입니다. 원본에서 실제 제공하는 스킬을 연결하고 문서·영상 CLI와 MCP, Codex용 Claude Mem 플러그인을 설치합니다. Claude Code 전용 훅을 Codex 설정으로 바꾸어 넣지 않습니다. Claude Code에서 사용하던 네이티브 플러그인 122개도 원한다면 `--claude` 옵션을 쓰세요.
+기본값은 **Codex 전체 구성**입니다. 원본에서 실제 제공하는 스킬을 연결하고 문서·영상 CLI와 MCP, Codex용 Claude Mem 플러그인을 설치합니다. Claude Code 전용 훅을 Codex 설정으로 바꾸어 넣지 않습니다. Claude Code에서 사용하던 네이티브 플러그인 123개도 원한다면 `--claude` 옵션을 쓰세요.
+
+### ClaraMuz · Reason Network
+
+- **ClaraMuz**: `clara-muz-team`·`ai-memory` 스킬을 설치합니다. `--claude`에서는 네이티브 플러그인도 설치합니다. 상대 AI의 CLI·로그인은 별도이며 공유 메모 자동 읽기 규칙은 임의로 추가하지 않습니다.
+- **Reason Network**: 전체 구성에서 공식 CLI 0.12.11과 MCP를 설치합니다(총 7개 로컬 MCP). OS·CPU별 SHA-256을 고정하고 팩 전용 데이터 폴더를 사용합니다. `--profile skills`는 소스만 보관합니다. 팀 로그인·초대와 네트워크 접근은 별도이며 자동 팀 가입·메시지 전송·에이전트 훅 등록은 하지 않습니다. 훅이 필요하면 설치 후 `reason-network setup --no-service`를 직접 실행하세요.
+- 이 변경은 개발 중인 소스 구성입니다. 기존 `v1.0.1` 릴리스 설치 명령에는 새 릴리스 발행 전까지 포함되지 않습니다.
 
 ### 버전을 고정합니다
 

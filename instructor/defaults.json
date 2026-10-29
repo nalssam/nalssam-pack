@@ -1,0 +1,9 @@
+{
+  "role": "교관",
+  "courses": "일반 교수법",
+  "audience": "성인 학습자",
+  "session_minutes": 50,
+  "tasks": ["강의안", "실습자료", "평가문항"],
+  "tone": "명확하고 간결한 한국어",
+  "agent": "manual"
+}

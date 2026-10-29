@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "files": {
+    "harness.py": "b2b6c27de2cbc3d37335df02ac714797e25fb53a656a6c1beee278d453d3bc64",
+    "defaults.json": "59093d8092d2b989456142dfde9fb1bcf3903274e936c9f4bfda397facc826e2",
+    "skills/assessment/SKILL.md": "777e1afa998aa0401e895d41fe6b20b2bb4bc4c91dd8fca7713dd8e8c6b41421",
+    "skills/instructor-start/SKILL.md": "42b0146f9002bc329fd58130f3dbc2698f3d69cf0b3ec2e1190ba4cc06c7ea67",
+    "skills/lesson-design/SKILL.md": "2141a96ee0a1b536ef03f46dbade0769b0d191aaa682e8d46bc6e4cf79b11e2b",
+    "skills/materials/SKILL.md": "269431e36aaaeef1f54f556403d6673bb52f2b3bdc64531290d58efb17aa4236",
+    "templates/assessment-rubric.md": "1625bb12e6907a960f7d59a6eff190bb51ab7d357c5711ff5f5b7c0fac0bb7fe",
+    "templates/instructor-brief.md": "2c8dbac250cc470df5a86f7eafc41f8070318e8fb3817fd71612bd459df65389",
+    "templates/lesson-plan.md": "61cefaabb8f9eae612ea80a6f68900fbbfa12c17b4d41a5dc0e0dcd42aa00c93",
+    "templates/practice-sheet.md": "05fd76fbfbeb2971c06ad8ff671521264022fc5a36474a5f8688f3761551be3b",
+    "templates/session-reflection.md": "a65e4c50debbcd381e479378a594db5d548b33507e3d12b3db9565b190ae5d29"
+  }
+}

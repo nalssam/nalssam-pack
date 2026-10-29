@@ -40,7 +40,7 @@ Google Docs·Sheets·Slides는 이 환경에서 **Google Drive**를 진입점으
 
 ## 3. 날쌤팩이 준비하는 로컬 MCP
 
-기본 전체 설치의 **Codex 자동 등록 대상 6개**입니다. 외부 서비스 OAuth 커넥터와 구분됩니다. 아이콘은 문서/영상 등 기능을 나타내는 기호입니다.
+기본 전체 설치의 **Codex 자동 등록 대상 7개**입니다. 외부 서비스 OAuth 커넥터와 구분됩니다. 아이콘은 문서/영상 등 기능을 나타내는 기호입니다.
 
 | 아이콘 | MCP / 서버 이름 | 설명 | 설치·추가 조건 |
 |---|---|---|---|
@@ -51,7 +51,9 @@ Google Docs·Sheets·Slides는 이 환경에서 **Google Drive**를 진입점으
 | 🔄 | [MarkItDown](https://github.com/microsoft/markitdown) · `markitdown` | 문서·파일 내용을 Markdown으로 변환 | 자동 설치·등록. 형식별 의존성은 고정 목록으로 준비. |
 | 🎬 | [Motion Director](https://github.com/ZZombie04/motion) · `motion` | 모션그래픽 구성·렌더·검수 | 자동 설치·등록. Chromium·ffmpeg 실행 환경 필요. |
 
-Claude Code는 [README의 6개 등록 명령](../README.md#claude-code에-문서영상-mcp도-연결하기)을 사용합니다. 이름 충돌 시 기존 설정을 보존하고 별도 이름을 사용하세요.
+Claude Code는 [README의 7개 등록 명령](../README.md#claude-code에-문서영상-mcp도-연결하기)을 사용합니다. 이름 충돌 시 기존 설정을 보존하고 별도 이름을 사용하세요.
+
+Reason Network도 전체 구성의 MCP로 등록됩니다. 팀 로그인·초대 링크와 릴레이 접근은 별도이며 자동으로 가입하거나 메시지를 보내지 않습니다.
 
 ## 4. 날쌤팩의 스킬·플러그인 묶음
 
@@ -59,6 +61,7 @@ Claude Code는 [README의 6개 등록 명령](../README.md#claude-code에-문서
 
 | 아이콘 | 명칭 | 설명 | 설치 방식 / 추가 조건 |
 |---|---|---|---|
+| 🤝 | [ClaraMuz](https://github.com/Jay-Hyun/ClaraMuz) | Claude·GPT 협업과 공유 메모·인수인계 | 두 스킬 기본 설치, 네이티브 플러그인은 `--claude`. 상대 CLI·로그인 별도. |
 | 🧠 | [Claude Mem](https://github.com/thedotmack/claude-mem) | 작업 기억·관찰과 문맥 재사용 | 기본 Codex 네이티브 플러그인. 관찰 모델·계정 설정 및 수집 동작은 별도 확인. |
 | 🛠️ | [ECC](https://github.com/affaan-m/ECC) | 개발·검토·테스트 등 작업 가이드 | Codex 스킬. Claude 네이티브 플러그인은 --claude. |
 | 🪨 | [Caveman](https://github.com/JuliusBrussee/caveman) | 간결한 응답과 작업 방식 | Codex 스킬. --claude 시 원본 플러그인 훅도 적용. |
@@ -80,7 +83,7 @@ Claude Code는 [README의 6개 등록 명령](../README.md#claude-code에-문서
 | 🤖 | [Codex Plugin for Claude Code](https://github.com/openai/codex-plugin-cc) | Claude Code에서 Codex에 검토·작업 위임 | Codex 관련 스킬. Claude 네이티브 플러그인은 --claude. |
 | 🅰️ | [After Effects MCP](https://github.com/nalssam/aftereffects-mcp) | Adobe After Effects 프로젝트 제어 | 소스·스킬 준비. Windows/macOS의 After Effects와 패널이 필요하며 기본 자동 등록 대상에서는 제외. |
 
-`--claude`가 설치하는 **122개 네이티브 플러그인의 정확한 이름·원본·활성 상태**는 [`pack.lock.json`의 `claude_plugins`](../pack.lock.json)에 있습니다. 위 표는 원본 묶음별 안내이며, 클라우드 서비스 플러그인 122개를 모두 OAuth로 연결한다는 뜻이 아닙니다.
+`--claude`가 설치하는 **123개 네이티브 플러그인의 정확한 이름·원본·활성 상태**는 [`pack.lock.json`의 `claude_plugins`](../pack.lock.json)에 있습니다. 위 표는 원본 묶음별 안내이며, 클라우드 서비스 플러그인 123개를 모두 OAuth로 연결한다는 뜻이 아닙니다.
 
 Harness 100·Awesome Claude Code·Superpowers Marketplace는 참고·템플릿 모음으로 보관합니다. `lifeofpi-ux/ppt-automation`은 접근 불가로 미설치 상태입니다.
 

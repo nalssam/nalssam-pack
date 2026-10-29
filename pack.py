@@ -257,6 +257,39 @@ class Pack:
             run([self.uv, 'pip', 'install', '--python', venv / 'bin/python', '-r', HERE / 'locks/python/showreel.txt'])
         return {'built': repo}
 
+    def reason_network(self):
+        """Install the locked official binary without joining a team or changing agent hooks."""
+        release = LOCK['reason_network']
+        system = {'Linux': 'unknown-linux-musl', 'Darwin': 'apple-darwin'}[platform.system()]
+        arch = {'x86_64': 'x86_64', 'AMD64': 'x86_64', 'aarch64': 'aarch64', 'arm64': 'aarch64'}.get(platform.machine())
+        target = f'{arch}-{system}'
+        expected = release['sha256'].get(target)
+        if not expected:
+            raise RuntimeError('Reason Network 지원 대상이 아닙니다: ' + target)
+        version = release['version']
+        dest = self.root / 'runtime/reason-network' / version
+        binary = dest / 'reason-network'
+        dest.mkdir(parents=True, exist_ok=True)
+        # Always verify the archive, including when refreshing an existing installation.
+        with tempfile.TemporaryDirectory(dir=dest) as temporary:
+            temp = Path(temporary)
+            archive = temp / 'release.tar.gz'
+            url = f'https://github.com/reason-machines/reason-network/releases/download/v{version}/reason-network-{target}.tar.gz'
+            run(['curl', '-fsSL', url, '-o', archive], env=self.env)
+            if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
+                raise RuntimeError('Reason Network 다운로드 체크섬 불일치')
+            with tarfile.open(archive) as tar:
+                tar.extractall(temp / 'unpacked', filter='data')
+            candidate = temp / 'unpacked/reason-network'
+            actual = run([candidate, '--version'], env=self.env)
+            if actual != 'reason-network ' + version:
+                raise RuntimeError('Reason Network 버전 불일치: ' + actual)
+            candidate.replace(binary)
+        state = self.root / 'data/reason-network'
+        command = self.wrapper('reason-network', [binary], {'REASON_NETWORK_HOME': str(state)})
+        self.report['pending'].append({'service': 'Reason Network', 'reason': 'CLI·MCP 준비. 팀 로그인/초대·외부 연결은 별도. 자동 팀 생성·가입·메시지 전송·훅 등록은 하지 않습니다.'})
+        return {'command': command, 'version': version, 'state': str(state)}
+
     def media(self):
         # Never use sudo. An installed Chromium/ffmpeg is reused. Missing Linux shared
         # libraries remain explicit pending requirements instead of fake readiness.
@@ -450,6 +483,8 @@ class Pack:
             if full:
                 for name, relative, extras in PY_TOOLS.get(source['repo'], []):
                     self.step('Python ' + name, lambda n=name, r=relative, e=extras, s=source: self.python_tool(n, r, e, self.source(s['repo'])))
+                if source['repo'] == 'reason-machines/reason-network':
+                    self.step('Reason Network 실행 환경', self.reason_network)
                 if source['repo'] in ['nalssam/rea', 'ZZombie04/motion', 'revfactory/showreel']:
                     self.step('빌드 ' + source['repo'], lambda repo=source['repo']: self.build_source(repo))
         media_ok = full and self.step('영상 실행 환경', self.media)
@@ -458,7 +493,7 @@ class Pack:
         if full:
             mappings = {'rea': ['rea', 'mcp'], 'hwpx-new': ['hwpx-new-mcp'], 'pptx-maker': ['pptx-maker-mcp'],
                         'markitdown': ['markitdown-mcp'], 'kordoc': ['kordoc-mcp'],
-                        'motion': ['motion', '__mcp__']}
+                        'motion': ['motion', '__mcp__'], 'reason-network': ['reason-network', 'mcp']}
             # Motion CLI's MCP server is a separate entry point.
             if 'ZZombie04/motion' in self.state['sources'] and (self.bin / 'motion').exists():
                 self.wrapper('motion-mcp', [self.node, self.source('ZZombie04/motion') / 'mcp/server.mjs'])
